@@ -1,4 +1,4 @@
-// part 1 just loop todolist by use insertAdjacentHTML
+
 let todoList = [
     {name: "JavaScript"},
     {name: "PHP"},
@@ -8,14 +8,17 @@ let todoList = [
 ];
 
 const done = document.querySelector('#did');
- //part 2 we can enter key to show value in input
+  
   const LISTDO = document.querySelector('input');
   document.addEventListener("keydown", event => {
     if(event.key === "Enter"){
+      let isEmpty = LISTDO.value != "";
+      if(isEmpty){
       const  todo = `
           <li>${LISTDO.value}</li>
          `;
          done.insertAdjacentHTML("beforeend", todo);
+    }
          LISTDO.value = "";
      }
  });
